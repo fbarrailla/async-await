@@ -1,0 +1,14 @@
+function getFirstUserDogDetails() {
+  return getDataFromServer('/users')
+    .then(users => users[0])
+    .then(firstUser => getDataFromServer(`/users/${firstUser.id}`))
+    .then(user => user.pets.find(pet => pet.type === 'dog'))
+    .then(dog => {
+      if (dog) {
+        return getDataFromServer(`/pets/${dog.id}`);
+      }
+      console.log('user id', firstUser.id);
+      // ⚠️ Uncaught ReferenceError: firstUser is not defined
+      return Promise.reject('No dog found... 😔')
+    });
+}

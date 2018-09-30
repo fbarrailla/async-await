@@ -1,0 +1,15 @@
+async function getUserPetNames() {
+  const user = await getDataFromServer('/users/1');  
+  const pets = await Promise.all(
+    user.pets.map(
+      pet => getDataFromServer(`/pets/${pet.id}`)
+    )
+  );
+  return pets.map(pet => pet.name);
+}
+
+(async () => {
+  const petNames = await getUserPetsNames();
+  console.log(petNames.join(', '));
+  // "Felix, Toby, Charlie"
+})();

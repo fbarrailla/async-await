@@ -1,0 +1,12 @@
+.Logger {
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px 20px 20px 20px;
+  font-size: 30px;
+  color: white;
+  left: 0;
+  right: 0;
+  text-align: center;
+}

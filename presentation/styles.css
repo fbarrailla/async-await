@@ -1,0 +1,67 @@
+@import './code/highlight.css';
+
+@font-face {
+  font-family: 'Graphik';
+
+  src: url('../assets/graphik-regular-webfont.eot');
+  src: url('../assets/graphik-regular-webfont.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/graphik-regular-webfont.woff') format('woff'),
+    url('../assets/graphik-regular-webfont.ttf') format('truetype'),
+    url('../assets/graphik-regular-webfont.svg#graphik_regularregular')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('../assets/graphik-bold-webfont.eot');
+  src: url('../assets/graphik-bold-webfont.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/graphik-bold-webfont.woff') format('woff'),
+    url('../assets/graphik-bold-webfont.ttf') format('truetype'),
+    url('../assets/graphik-bold-webfont.svg#graphikbold') format('svg');
+  font-weight: bold;
+  font-style: bold;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('../assets/graphik-light-webfont.eot');
+  src: url('../assets/graphik-light-webfont.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/graphik-light-webfont.woff') format('woff'),
+    url('../assets/graphik-light-webfont.ttf') format('truetype'),
+    url('../assets/graphik-light-webfont.svg#graphiklight') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+
+#root button {
+  font-family: 'Graphik';
+}
+
+.deck__author {
+  display: flex;
+  align-self: center;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  bottom: -200px;
+  justify-content: center;
+  width: 100%;
+  font-size: 20px;
+}
+.deck__author > img {
+  margin-left: 20px;
+  margin-top: -4px;
+}
+.deck__code--m {
+  font-size: 25px !important;
+}
+.deck__code--s {
+  font-size: 20px !important;
+}
+
+.deck__cb1 {
+  font-size: 0.7em;
+}

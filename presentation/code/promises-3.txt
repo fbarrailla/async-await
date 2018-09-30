@@ -1,0 +1,18 @@
+function getFirstUserDogDetails() {
+  let firstUser;
+  return getDataFromServer('/users')
+    .then(users => users[0])
+    .then(_firstUser => {
+      firstUser = _firstUser;
+      getDataFromServer(`/users/${firstUser.id}`)
+    })
+    .then(user => user.pets.find(pet => pet.type === 'dog'))
+    .then(dog => {
+      if (dog) {
+        return getDataFromServer(`/pets/${dog.id}`);
+      }
+      console.log('user id', firstUser.id);
+      // ✅ fixed
+      return Promise.reject('No dog found... 😔')
+    });
+}

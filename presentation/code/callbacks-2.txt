@@ -1,0 +1,23 @@
+function getDataFromServer(url, callback) {
+  const req = new XMLHttpRequest();
+  req.addEventListener("load", () => {
+    callback(JSON.parse(req.responseText))
+  });
+  req.open("GET", url);
+  req.send();
+}
+
+function getFirstUserDogDetails(callback) {
+  getDataFromServer('/users', users => {
+    const firstUser = users[0];
+    getDataFromServer(`/users/${firstUser.id}`, user => {
+      const dog = user.pets.find(pet => pet.type === 'dog');
+      if (dog) {
+        getDataFromServer(`/pets/${dog.id}`, dog => {
+          // finally I get that dog!
+          callback(dog);
+        });
+      }
+    });
+  });
+}

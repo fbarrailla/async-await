@@ -1,0 +1,16 @@
+class MyShinyComponent extends React.Component {
+  state = { 
+    done: false;
+  };
+  async componentDidMount() {
+    await someAsyncStuffToBeDone();
+    this.setState({ done: true });
+  }
+  render() {
+    return (
+      <h1>
+        {!this.state.done ? 'waiting...' : 'DONE!'}
+      </h1>
+    )
+  }
+}

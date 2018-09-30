@@ -1,0 +1,17 @@
+const doSomeAsyncStuff = async () => {
+  try {    
+    await somePromise;
+    return 'Yay!';
+  } catch (error) {
+    console.log('something went wrong', error);
+  }
+}
+
+// equivalent with promises
+const doSomeAsyncStuff = () => {
+  return somePromise
+    .then(() => 'Yay!')
+    .catch(error => {
+      console.log('something went wrong', error);
+    })
+}

@@ -1,0 +1,6 @@
+// just add the `async` keyword
+async function doSomeAsyncStuff() {
+  await somePromise;
+  const result = await someOtherPromise;
+  return 'something' + result;
+}

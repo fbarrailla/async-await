@@ -1,0 +1,17 @@
+// action creator
+const fetchUsers = () => async dispatch => {
+  dispatch({ type: 'FETCH_USERS_START' });
+  try {
+    const users = await getDataFromServer('/users');
+    dispatch({
+      type: 'FETCH_USERS_SUCCESS',
+      payload: { users }
+    });
+  } catch (error) {
+    dispatch({
+      type: 'FETCH_USERS_ERROR',
+      error: true,
+      payload: error
+    });
+  }
+}

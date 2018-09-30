@@ -1,0 +1,9 @@
+// works with arrow functions
+const doSomeAsyncStuff = async () => {
+  await somePromise;
+}
+
+// IIFE
+(async () => {
+  await somePromise;
+})();

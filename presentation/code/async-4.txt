@@ -1,0 +1,15 @@
+async function getDataFromServer(url) {
+  const response = await fetch(url);
+  return response.json();  
+}
+
+async function getFirstUserDogDetails() {
+  const [ firstUser ] = await getDataFromServer('/users');  
+  const { pets } = await getDataFromServer(`/users/${firstUser.id}`);
+  const dog = user.pets.find(pet => pet.type === 'dog');
+  if (dog) {
+    return getDataFromServer(`/pets/${dog.id}`);
+  }
+  console.log('user id', firstUser.id);
+  return Promise.reject('No dog found... 😔');
+}
