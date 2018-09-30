@@ -2,7 +2,7 @@
 
 ## Asynchronous Javascript made easy
 
-A presentation by François Barrailla ([ekino.](http://ekino.com/))
+[A presentation](https://fbarrailla.github.io/async-await) by François Barrailla ([ekino.](http://ekino.com/))
 
 Made with ❤️ and:
 * [Spectacle](https://formidable.com/open-source/spectacle/)
