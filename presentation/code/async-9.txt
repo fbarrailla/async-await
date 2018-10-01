@@ -1,4 +1,4 @@
-// action creator
+// thunk
 const fetchUsers = () => async dispatch => {
   dispatch({ type: 'FETCH_USERS_START' });
   try {

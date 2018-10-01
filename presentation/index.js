@@ -354,11 +354,19 @@ export default class Presentation extends React.Component {
             </Heading>
             <List>
               <ListItem textSize={24} margin={20} textAlign="center">
-                <Link href="https://github.com/fbarrailla/async-await">
+                <Link
+                  href="https://github.com/fbarrailla/async-await"
+                  target="_blank"
+                >
                   github.com/fbarrailla/async-await
                 </Link>
               </ListItem>
-              <ListItem textSize={24} margin={20} textAlign="center">
+              <ListItem
+                textSize={24}
+                margin={20}
+                textAlign="center"
+                target="_blank"
+              >
                 <Link href="https://fbarrailla.github.io/async-await">
                   fbarrailla.github.io/async-await
                 </Link>
